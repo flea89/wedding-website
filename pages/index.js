@@ -72,7 +72,7 @@ export default function Ruutsu(context) {
       <main className="ph4 mw8 flex flex-column center">
         <section id="home" className="flex flex-column items-center">
           <h1>{context.title}</h1>
-          <img></img>
+
           <p>{context.date}</p>
           <text></text>
         </section>
@@ -152,10 +152,10 @@ export default function Ruutsu(context) {
                   </label>
                 </fieldset>
                 <label className="db mb3">
-                  C'e qualche cibo che non mangi?
+                  C&apos;e qualche cibo che non mangi?
                   <textarea
                     className="db"
-                    name="dietary-requirementes"
+                    name="dietary-requirements"
                   ></textarea>
                 </label>
                 <fieldset className="db mb3">
