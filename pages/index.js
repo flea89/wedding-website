@@ -31,8 +31,54 @@ export default function Ruutsu(context) {
           content={`${context.meta.site}${metaImg.src}`}
         />
       </Head>
+      <header className="ph4 w-100 pv3 mb4 mb5-ns bt bb overflow-auto position-sticky-top background-white">
+        {context.menu.map((i, index) => (
+          <a className="mr3 ttc" key={index} href={i.link}>
+            {i.text}
+          </a>
+        ))}
+      </header>
+      <main className="ph4 mw8 flex flex-column center">
+        <section id="home" className="flex flex-column items-center">
+          <h1>{context.title}</h1>
+          <img></img>
+          <p>{context.date}</p>
+          <text></text>
+        </section>
+        <section id="schedule">
+          <h2>Agenda</h2>
+          <h3>Cerimonia</h3>
+          <p>
+            Santuario di Ripoli, <br></br>Via Montemale,<br></br> Dronero CN
+          </p>
+          <a
+            href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Trovalo su Google Maps
+          </a>
+          <h3 className="mt4">Reception</h3>
+          <p>
+            Villa Kimera, <br></br> Cuneo
+          </p>
+          <a
+            href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Trovalo su Google Maps
+          </a>
+        </section>
+        <section>RSVP</section>
+        <section id="schedule">
+          <h2>Regali</h2>
+        </section>
+        <section id="donations">
+          <h2>Donazioni</h2>
+        </section>
+      </main>
 
-      <h1>{context.title}</h1>
       <footer className={styles.footer}></footer>
     </div>
   );

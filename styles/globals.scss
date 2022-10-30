@@ -4,17 +4,18 @@
 
 html,
 body {
-  background-color: black;
+  background-color: $white;
   padding: 0;
   margin: 0;
   color: $font-color;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: rem($font-size);
+  line-height: 1.35;
+  scroll-behavior: smooth;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 * {
@@ -23,16 +24,16 @@ a {
 
 
 h1, .h1 {
-  font-size: rem(96px);
-}
-h2, .h2 {
   font-size: rem(60px);
 }
-h3, .h3 {
+h2, .h2 {
   font-size: rem(48px);
 }
+h3, .h3 {
+  font-size: rem(28px);
+}
 h4, .h4 {
-  font-size: rem(34px);
+  font-size: rem(32px);
 }
 h5, .h5 {
   font-size: rem(24px);
@@ -41,10 +42,49 @@ h6, .h6 {
   font-size: rem(20px);
 }
 
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+}
+
 .body-size {
   font-size: rem($font-size);
 }
 
 .small {
   font-size: rem(14px);
+}
+
+
+section {
+
+  &::after {
+    content: '';
+    width: 90%;
+    height: 1px;
+    background-color: $dark;
+    margin: rem(30px) auto;
+    display: block;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+
+.position-sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.background-white {
+  background-color:$white;
 }
