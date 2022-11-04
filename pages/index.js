@@ -3,7 +3,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import { getPageCopy } from "../utils/getPageCopy";
 import metaImg from "../public/meta.jpg";
+import heroImg from "../public/hero.jpg";
 import classNames from "classnames";
+import Image from "next/image";
 
 export default function Ruutsu(context) {
   let form = useRef();
@@ -59,7 +61,7 @@ export default function Ruutsu(context) {
         <meta name="twitter:description" content={context.meta.desc} />
         <meta
           name="twitter:image"
-          content={`${context.meta.site}${metaImg.src}`}
+          content={`${context.meta.site}${heroImg.src}`}
         />
       </Head>
       <header className="ph4 w-100 pv3 mb4 mb5-ns bt bb overflow-auto position-sticky-top background-white">
@@ -72,7 +74,16 @@ export default function Ruutsu(context) {
       <main className="ph4 mw8 flex flex-column center">
         <section id="home" className="flex flex-column items-center">
           <h1>{context.title}</h1>
-
+          <Image
+            src={heroImg}
+            alt=""
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+              opacity: 0.9,
+            }}
+          />
           <p>{context.date}</p>
           <text></text>
         </section>
