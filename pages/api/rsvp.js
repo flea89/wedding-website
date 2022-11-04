@@ -21,25 +21,22 @@ export default async function handler(req, res) {
     Kids: ${req.body.kids}
     Transport: ${req.body.kids}
     Questions: ${req.body.questions}
-    `;
+`;
 
     const msgMe = {
-      to: "killer.paolo@gmail.com", // Change to your recipient
-      from: "killer.paolo@gmail.com", // Change to your verified sender
+      to: ["killer.paolo@gmail.com"], // Change to your recipient
+      cc: ["annaarpa93@gmail.com"],
+      from: "info@annaepaolo.com", // Change to your verified sender
+      replyTo: "killer.paolo@gmail.com",
       subject: "RSVP matrimonio",
       text,
     };
 
-    const msgAnna = {
-      ...msgMe,
-      to: "annarpa93@gmail.com",
-    };
     if (process.env.LOG_ONLY_EMAILS === "true") {
       console.log(`Sending email: ${text}`);
     } else {
       try {
         await sgMail.send(msgMe);
-        await sgMail.send(msgAnna);
       } catch (e) {
         console.error(e);
         return res.status(500).json({});
