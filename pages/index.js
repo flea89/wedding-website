@@ -64,7 +64,7 @@ export default function Ruutsu(context) {
           content={`${context.meta.site}${heroImg.src}`}
         />
       </Head>
-      <header className="ph4 w-100 pv3 mb4 mb5-ns bt bb overflow-auto position-sticky-top background-white">
+      <header className="ph4 w-100 pv3 mb4 mb5-ns bt bb overflow-auto position-sticky-top background-white z1">
         {context.menu.map((i, index) => (
           <a className="mr3 ttc" key={index} href={i.link}>
             {i.text}
