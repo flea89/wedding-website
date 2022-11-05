@@ -6,6 +6,10 @@ import metaImg from "../public/meta.jpg";
 import heroImg from "../public/hero.jpg";
 import heelsImg from "../public/heels.png";
 import rsvpImg from "../public/rsvp.png";
+import planeImg from "../public/plane.png";
+import trainImg from "../public/train.png";
+import bedImg from "../public/bed.png";
+import busImg from "../public/bus.png";
 import classNames from "classnames";
 import Image from "next/image";
 
@@ -82,7 +86,8 @@ export default function Ruutsu(context) {
           </h1>
           <Image
             src={heroImg}
-            alt=""
+            priority
+            alt="Paolo ed Anna coricati sull'erba a Richmond Park"
             sizes="100vw"
             style={{
               width: "100%",
@@ -124,14 +129,24 @@ export default function Ruutsu(context) {
             </a>
           </div>
           <p>
-            <Image src={heelsImg} alt="heels" width={50} height={50}></Image>
+            <Image
+              src={heelsImg}
+              alt="Icona tacchi a spillo"
+              width={50}
+              height={50}
+            ></Image>
             <div>
               Per le signore: sterrato ed erba sia al Santuario di Madonna di
               Ripoli che a Villa Kimera!
             </div>
           </p>
           <div>
-            <Image src={rsvpImg} alt="heels" width={50} height={50}></Image>
+            <Image
+              src={rsvpImg}
+              alt="Icona RSVP"
+              width={50}
+              height={50}
+            ></Image>
             <div>
               Per far in modo di organizzare la festa ti chiediamo di confermare
               la presenza entro il 31 Maggio 2023{" "}
@@ -260,7 +275,16 @@ export default function Ruutsu(context) {
             pubblici per gli ospiti che viaggiano da lontano o dall’estero per
             avvicinarsi il più possibile a Dronero:
           </p>
-          <h3>Aeroporti</h3>
+          <h3 className="mt4">
+            <Image
+              src={planeImg}
+              className="mr2"
+              alt="Icona aeroplano"
+              width={20}
+              height={20}
+            ></Image>
+            Aeroporti
+          </h3>
           <dl>
             <dt className="mb1 b">Aeroporto Cuneo (26 km da Dronero)</dt>
             <dd className="ml0 mb3">
@@ -283,7 +307,16 @@ export default function Ruutsu(context) {
               </a>
             </dd>
           </dl>
-          <h3>Treno</h3>
+          <h3 className="mt4">
+            <Image
+              src={trainImg}
+              className="mr2"
+              alt="Icona treno"
+              width={20}
+              height={20}
+            ></Image>
+            Treno
+          </h3>
           <p>
             <a
               href="https://goo.gl/maps/tSezF4RzSmQAyGfi9"
@@ -296,7 +329,16 @@ export default function Ruutsu(context) {
             Nuova e Porta Susa, raggiungibili con taxi o navetta dall’aeroporto
             di Torino Caselle
           </p>
-          <h3>Pernottamento</h3>
+          <h3>
+            <Image
+              src={bedImg}
+              className="mr2"
+              alt="Icona hotel"
+              width={20}
+              height={20}
+            ></Image>
+            Pernottamento
+          </h3>
           <p>
             La città di Cuneo si trova a circa 18 km da Dronero, ed offre
             un’ampia varietà di alberghi, b&b, alloggi.
@@ -333,7 +375,16 @@ export default function Ruutsu(context) {
               </a>
             </li>
           </ul>
-          <h3>Spostamenti</h3>
+          <h3 className="mt4">
+            <Image
+              src={busImg}
+              className="mr2"
+              alt="Icona bus"
+              width={20}
+              height={20}
+            ></Image>
+            Spostamenti
+          </h3>
           <p>
             In base alle conferme ricevute, organizzeremo una navetta che potrà
             servire gli ospiti negli spostamenti da:
@@ -349,30 +400,34 @@ export default function Ruutsu(context) {
         </section>
         <section id="schedule">
           <h2>Regali</h2>
-          <p className="relative pa4">
-            <span
-              className="f1 absolute"
-              style={{
-                top: 0,
-                left: 0,
-              }}
-            >
-              ‟
-            </span>
-            <span className="i dib f3">
-              Il mondo è un libro e chi non viaggia ne conosce solo una pagina.
-            </span>
-            <span
-              style={{
-                paddingLeft: "1rem",
-                bottom: 0,
-              }}
-              className="f1 absolute"
-            >
-              „
-            </span>
-          </p>
-          <p className="mt4 mb2">
+          <div className="quote pb4 dib">
+            <p className="relative pa4 pb0 mb0">
+              <span
+                className="f1 absolute"
+                style={{
+                  top: 0,
+                  left: 0,
+                }}
+              >
+                ‟
+              </span>
+              <span className="i dib f3">
+                Il mondo è un libro e chi non viaggia ne conosce solo una
+                pagina.
+              </span>
+              <span
+                style={{
+                  paddingLeft: "1rem",
+                  bottom: 0,
+                }}
+                className="f1 absolute"
+              >
+                „
+              </span>
+            </p>
+            <div className="f6 tr pt1 pr4">(Sant&apos;Agostino)</div>
+          </div>
+          <p className="mt4 mb3">
             Vi ringraziamo di cuore se vorrete contribuire ad arricchire il
             nostro libro con una nuova pagina bellissima e indimenticabile:{" "}
             <span className="b">il Vietnam</span>.

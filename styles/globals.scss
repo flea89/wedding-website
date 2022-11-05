@@ -70,11 +70,15 @@ section {
 
   &::after {
     content: '';
-    width: 90%;
-    height: 1px;
-    background-color: $dark;
+    width: 60%;
+    height: 30px;
+    // background-color: $dark;
     margin: rem(30px) auto;
     display: block;
+    background-image: url('/leaf.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: space;
   }
 
   &:last-child {
