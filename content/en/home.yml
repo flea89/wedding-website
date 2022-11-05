@@ -6,20 +6,16 @@ meta:
 title: Anna & Paolo
 
 menu:
-  - text: home
+  - text: Home
     link: '#'
-  - text: agenda
+  - text: Agenda
     link: '#schedule'
-  - text: donazioni
-    link: '#donations'
+  - text: Info
+    link: '#info'
   - text: regali
     link: '#gifts'
-  - text: fedi
-    link: '#wedding-bands'
-  - text: Informazioni
-    link: '#info'
-  - text: contatti
-    link: '#contacts'
+  - text: Donazioni
+    link: '#donations'
 
 date: 29 Luglio 2023
 place: Donero

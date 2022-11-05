@@ -28,18 +28,23 @@ h1, .h1 {
 }
 h2, .h2 {
   font-size: rem(48px);
+  margin-bottom: rem(20px);
 }
 h3, .h3 {
   font-size: rem(28px);
+  margin-bottom: rem(20px);
 }
 h4, .h4 {
-  font-size: rem(32px);
+  font-size: rem($font-size);
+  margin-bottom: rem(12px);
 }
 h5, .h5 {
-  font-size: rem(24px);
+  font-size: rem($font-size);
+  margin-bottom: rem(12px);
 }
 h6, .h6 {
-  font-size: rem(20px);
+  font-size: rem($font-size);
+  margin-bottom: rem(12px);
 }
 
 
@@ -77,6 +82,10 @@ section {
       display: none;
     }
   }
+}
+
+p {
+  margin: 0 0 rem(12px);
 }
 
 
@@ -132,5 +141,17 @@ section {
   } 40% { 
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
+  }
+}
+
+
+.and {
+  display: flex;
+  align-items: center;
+  &:before, &:after {
+    content: "";
+    height: 2px;
+    background-color: $dark;
+    flex: 1;
   }
 }
