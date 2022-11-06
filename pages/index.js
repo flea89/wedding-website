@@ -13,7 +13,7 @@ import busImg from "../public/bus.png";
 import classNames from "classnames";
 import Image from "next/image";
 
-export default function Ruutsu(context) {
+export default function Index(context) {
   let form = useRef();
   let [rsvpSent, setRsvpSent] = useState(false);
   let [rsvpError, setRsvpError] = useState(false);
@@ -100,32 +100,35 @@ export default function Ruutsu(context) {
         </section>
         <section id="schedule">
           <div className="mb4">
-            <h2>Agenda</h2>
-            <h3>Cerimonia</h3>
+            <h2>{context.s_title}</h2>
+            <h3>{context.s_cerimony}</h3>
             <p>
-              Santuario di Ripoli, <br></br>Via Montemale,<br></br> Dronero CN
+              {context.cerimony_location} <br></br>
+              {context.cerimony_address} <br></br>
+              {context.cerimony_city}
             </p>
             <a
               href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
               target="_blank"
               rel="noreferrer"
             >
-              Trovalo su Google Maps
+              {context.find_on_maps}
             </a>
-            <h3 className="mt4">Ricevimento</h3>
+            <h3 className="mt4">{context.s_reception}</h3>
+            <p>{context.s_reception_desc}</p>
             <p>
-              Dopo la cerimonia i festeggiamenti continueranno presso Villa
-              Kimera
-            </p>
-            <p>
-              Via Basse di Chiusano 10,<br></br> 12100 Cuneo
+              <p>
+                {context.reception_location} <br></br>
+                {context.reception_address} <br></br>
+                {context.reception_city}
+              </p>
             </p>
             <a
               href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
               target="_blank"
               rel="noreferrer"
             >
-              Trovalo su Google Maps
+              {context.find_on_maps}
             </a>
           </div>
           <p>
@@ -135,10 +138,7 @@ export default function Ruutsu(context) {
               width={50}
               height={50}
             ></Image>
-            <div>
-              Per le signore: sterrato ed erba sia al Santuario di Madonna di
-              Ripoli che a Villa Kimera!
-            </div>
+            <div>{context.lady_heels}</div>
           </p>
           <div>
             <Image
@@ -147,12 +147,9 @@ export default function Ruutsu(context) {
               width={50}
               height={50}
             ></Image>
-            <div>
-              Per far in modo di organizzare la festa ti chiediamo di confermare
-              la presenza entro il 31 Maggio 2023{" "}
-            </div>
+            <div>{context.rsvp_desc} </div>
             <label htmlFor="toggle" className="dib b underline mb3">
-              cliccando qui
+              {context.rsvp_toggle_text}
             </label>
             <input
               className={classNames("hidden", styles.toggle)}
@@ -161,12 +158,12 @@ export default function Ruutsu(context) {
               type="checkbox"
             />
             {rsvpSent ? (
-              <div> Grazie</div>
+              <div> {context.success_message} </div>
             ) : (
               <form ref={form} onSubmit={onSubmit}>
-                <h3>RSVP</h3>
+                <h3>{context.f_title}</h3>
                 <label className="db mb3">
-                  Nome(i):
+                  {context.input_name}:
                   <input
                     required
                     className="db"
@@ -175,7 +172,7 @@ export default function Ruutsu(context) {
                   ></input>
                 </label>
                 <fieldset className="db mb3">
-                  <legend>Ci sarò/saremo: </legend>
+                  <legend>{context.input_av}: </legend>
                   <input
                     type="radio"
                     id="yes"
@@ -185,7 +182,7 @@ export default function Ruutsu(context) {
                     readOnly
                   />
                   <label className="ml1" htmlFor="yes">
-                    si
+                    {context.yes}
                   </label>
                   <input
                     className="ml3"
@@ -195,21 +192,21 @@ export default function Ruutsu(context) {
                     value="yes"
                   />
                   <label className="ml1" htmlFor="no">
-                    no
+                    {context.no}
                   </label>
                 </fieldset>
                 <label className="db mb3">
-                  C&apos;e qualche cibo che non mangi?
+                  {context.input_dietary}:
                   <textarea
                     className="db"
                     name="dietary-requirements"
                   ></textarea>
                 </label>
                 <fieldset className="db mb3">
-                  <legend>Porto i miei bimbi: </legend>
+                  <legend>{context.input_kids}: </legend>
                   <input type="radio" id="yes" name="kids" value="yes" />
                   <label className="ml1" htmlFor="no">
-                    si
+                    {context.yes}
                   </label>
                   <input
                     className="ml3"
@@ -221,14 +218,14 @@ export default function Ruutsu(context) {
                     readOnly
                   />
                   <label className="ml1" htmlFor="yes">
-                    no
+                    {context.no}
                   </label>
                 </fieldset>
                 <fieldset className="db mb3">
-                  <legend>Hai bisogno di un passaggio? </legend>
+                  <legend>{context.input_transport} </legend>
                   <input type="radio" id="yes" name="transport" value="yes" />
                   <label className="ml1" htmlFor="yes">
-                    si
+                    {context.yes}
                   </label>
                   <input
                     className="ml3"
@@ -240,16 +237,16 @@ export default function Ruutsu(context) {
                     readOnly
                   />
                   <label className="ml1" htmlFor="no">
-                    no
+                    {context.no}
                   </label>
                 </fieldset>
                 <label className="db mb3">
-                  Hai qualche domanda?
+                  {context.input_question}
                   <textarea className="db" name="questions"></textarea>
                 </label>
                 <div className="db relative pb2">
                   <button className="db" type="submit">
-                    Invia
+                    {context.send}
                   </button>
                   <div className="absolute w-100">
                     <div hidden={!rsvpSending} className="spinner">
@@ -269,12 +266,8 @@ export default function Ruutsu(context) {
           </div>
         </section>
         <section id="info">
-          <h2>Informazioni pratiche</h2>
-          <p>
-            In questa sezione cerchiamo di riassumere le opzioni di mezzi
-            pubblici per gli ospiti che viaggiano da lontano o dall’estero per
-            avvicinarsi il più possibile a Dronero:
-          </p>
+          <h2>{context.i_title}</h2>
+          <p>{context.i_desc}</p>
           <h3 className="mt4">
             <Image
               src={planeImg}
@@ -283,27 +276,27 @@ export default function Ruutsu(context) {
               width={20}
               height={20}
             ></Image>
-            Aeroporti
+            {context.i_aero_title}
           </h3>
           <dl>
-            <dt className="mb1 b">Aeroporto Cuneo (26 km da Dronero)</dt>
+            <dt className="mb1 b">{context.levaldigi}</dt>
             <dd className="ml0 mb3">
               <a
                 href="https://g.page/cuf_cuneoairport?share"
                 target="_blank"
                 rel="noreferrer"
               >
-                Trovalo su maps
+                {context.find_on_maps}
               </a>
             </dd>
-            <dt className="mb1 b">Aeroporto Torino (135 km da Dronero)</dt>
+            <dt className="mb1 b">{context.caselle}</dt>
             <dd className="ml0 mb3">
               <a
                 href="https://goo.gl/maps/5LdGddLw4UekbT698"
                 target="_blank"
                 rel="noreferrer"
               >
-                Trovalo su maps
+                {context.find_on_maps}
               </a>
             </dd>
           </dl>
@@ -315,7 +308,7 @@ export default function Ruutsu(context) {
               width={20}
               height={20}
             ></Image>
-            Treno
+            {context.i_train_title}
           </h3>
           <p>
             <a
@@ -323,11 +316,9 @@ export default function Ruutsu(context) {
               target="_blank"
               rel="noreferrer"
             >
-              Stazione di Cuneo
+              {context.i_station}
             </a>{" "}
-            (19 km da Dronero), a cui si arriva con il treno da Torino Porta
-            Nuova e Porta Susa, raggiungibili con taxi o navetta dall’aeroporto
-            di Torino Caselle
+            {context.i_station_desc}
           </p>
           <h3>
             <Image
@@ -337,43 +328,18 @@ export default function Ruutsu(context) {
               width={20}
               height={20}
             ></Image>
-            Pernottamento
+            {context.i_acc_title}
           </h3>
-          <p>
-            La città di Cuneo si trova a circa 18 km da Dronero, ed offre
-            un’ampia varietà di alberghi, b&b, alloggi.
-          </p>
-          <p>
-            Se invece voleste soggiornare a Dronero le opzioni consigliate sono:
-          </p>
+          <p>{context.i_acc_desc}</p>
+          <p>{context.i_acc_desc_2}</p>
           <ul>
-            <li>
-              <a
-                href="https://ilcavallobianco.com/www/albergo/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Albergo “Il cavallo Bianco
-              </a>
-            </li>
-            <li>
-              <a
-                href=" https://www.draconeriumhotel.it/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Hotel “Draconerium”
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://www.locandacabianca.it/it/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Locanda Occitana “Ca’ Bianca”
-              </a>
-            </li>
+            {context.hotels.map((h) => (
+              <li key={h.name}>
+                <a href={h.link} target="_blank" rel="noreferrer">
+                  {h.name}
+                </a>
+              </li>
+            ))}
           </ul>
           <h3 className="mt4">
             <Image
@@ -383,23 +349,21 @@ export default function Ruutsu(context) {
               width={20}
               height={20}
             ></Image>
-            Spostamenti
+            {context.i_transport_title}
           </h3>
+          <p>{context.i_transport_desc}</p>
+          <p>{context.i_transport_desc}</p>
           <p>
-            In base alle conferme ricevute, organizzeremo una navetta che potrà
-            servire gli ospiti negli spostamenti da:
+            <span className="b">Dronero → Villa Kimera</span>,{" "}
+            {context.i_trasport_reception}{" "}
           </p>
           <p>
-            <span className="b">Dronero → Villa Kimera</span>, a seguito della
-            cerimonia
-          </p>
-          <p>
-            <span className="b">Villa Kimera → Cuneo → Dronero</span>, alla fine
-            dei festeggiamenti
+            <span className="b">Villa Kimera → Cuneo → Dronero</span>,{" "}
+            {context.i_trasport_back}{" "}
           </p>
         </section>
         <section id="schedule">
-          <h2>Regali</h2>
+          <h2>{context.g_title}</h2>
           <div className="quote pb4 dib">
             <p className="relative pa4 pb0 mb0">
               <span
@@ -411,10 +375,7 @@ export default function Ruutsu(context) {
               >
                 ‟
               </span>
-              <span className="i dib f3">
-                Il mondo è un libro e chi non viaggia ne conosce solo una
-                pagina.
-              </span>
+              <span className="i dib f3">{context.g_quote}</span>
               <span
                 style={{
                   paddingLeft: "1rem",
@@ -425,13 +386,12 @@ export default function Ruutsu(context) {
                 „
               </span>
             </p>
-            <div className="f6 tr pt1 pr4">(Sant&apos;Agostino)</div>
+            <div className="f6 tr pt1 pr4">({context.g_sait})</div>
           </div>
-          <p className="mt4 mb3">
-            Vi ringraziamo di cuore se vorrete contribuire ad arricchire il
-            nostro libro con una nuova pagina bellissima e indimenticabile:{" "}
-            <span className="b">il Vietnam</span>.
-          </p>
+          <p
+            className="mt4 mb3"
+            dangerouslySetInnerHTML={{ __html: context.g_desc }}
+          ></p>
           <div className="mb4">
             <h4>Coordinate bancarie (euro):</h4>
             <p>
@@ -442,74 +402,30 @@ export default function Ruutsu(context) {
             </p>
           </div>
           <div>
-            <h4>Coordinate bancarie (sterline):</h4>
+            <h4>Bank details (pounds):</h4>
             <p>
-              Denominazione Conto: Paolo Chillari <br></br>
+              Account name: Paolo Chillari <br></br>
               Sort Code: 20-41-41<br></br>
               Account number: 60373303<br></br>
-              Causale: regalo di nozze
+              Reason: wedding gift
             </p>
           </div>
-          <div>
-            Se state invece pensando ad un regalo che contribuirà ad abbellire
-            la nostra quotidianità, abbiamo creato una Lista Nozze presso{" "}
-            <a
-              href="https://bosiocasa.it/index.asp"
-              target="_blank"
-              rel="noreferrer"
-            >
-              BosioCasa di Cuneo
-            </a>
-            .
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: context.g_list }}></div>
         </section>
         <section id="donations">
-          <h2>Donazioni</h2>
-          <p>
-            Ringraziandovi per quanto la vostra presenza renderà speciale il
-            nostro giorno, abbiamo deciso di ricambiare il vostro affetto con
-            una bomboniera 100% solidale.
-          </p>
-          <p>
-            Effettueremo infatti una donazione all&apos;Associazione{" "}
-            <span className="b">“Betania ODV”</span>
-            che da anni accoglie minori e persone in situazione di marginalità
-            sociale.
-          </p>
-          <p>
-            In particolare, le nostre offerte saranno destinate al villaggio di
-            <a
-              href="https://goo.gl/maps/VaLo8TqSX3RQrY61A"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Emali, Kenya
-            </a>
-            , dove dal 2006 l&apos;Associazione ha dato vita ad una scuola
-            materna, un orfanotrofio, un ambulatorio ed un centro di ascolto.
-          </p>
-          <p>
-            Se siete interessati a leggere di più sull’Associazione “
-            <span className="b">Betania ODV”</span> e sul suo operato vi
-            invitiamo a farlo qui:
-            <a
-              href="https://www.associazionebetaniaonlus.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://www.associazionebetaniaonlus.org/
-            </a>
-          </p>
+          <h2>{context.d_title}</h2>
+          {context.d_ps.map((p, index) => (
+            <p key={index} dangerouslySetInnerHTML={{ __html: p }}></p>
+          ))}
         </section>
       </main>
 
       <footer className="ph4 mw8 mt5 center tc f7">
         <p>
-          Per qualsiasi informazione, dubbio o chiarimento, potete scriverci
-          alla mail{" "}
+          {context.footer_contact}{" "}
           <a href="mailto:an.astesano@gmail.com">an.astesano@gmail.com</a>
         </p>
-        <p>Se il sito non funziona potete prendervela col futuro sposo :)</p>
+        <p>{context.footer_dev}</p>
       </footer>
     </div>
   );

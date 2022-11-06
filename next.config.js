@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   i18n: {
     locales: ["en", "it"],
-    defaultLocale: "en",
+    defaultLocale: "it",
   },
   webpack: function (config) {
     config.module.rules.push({

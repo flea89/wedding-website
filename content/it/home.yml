@@ -1,0 +1,116 @@
+
+
+
+meta:
+  title: Anna e Paolo - Wedding 
+  desc: 'Anna e Paolo wedding website with all the information you need.'
+  site: 'https://annaepaolo.com'
+
+title: Anna & Paolo
+
+menu:
+  - text: Home
+    link: '#'
+  - text: Agenda
+    link: '#schedule'
+  - text: Info
+    link: '#info'
+  - text: regali
+    link: '#gifts'
+  - text: Donazioni
+    link: '#donations'
+
+#Generic
+find_on_maps: Trovalo su Google Maps
+
+# Hero
+date: 29 Luglio 2023
+place: Donero
+
+
+# Schedule
+s_title: Agenda
+s_cerimony: Cerimonia
+cerimony_location: Santuario di Ripoli
+cerimony_address: Via Montemale
+cerimony_city: Dronero CN
+
+s_reception: Ricevimento
+s_reception_desc: Dopo la cerimonia i festeggiamenti continueranno presso
+reception_location: Villa Kimera
+reception_address: Via Basse di Chiusano 10
+reception_city: 12100 Cuneo
+
+lady_heels: "Per le signore: sterrato ed erba sia al Santuario di Madonna di Ripoli che a Villa Kimera!"
+rsvp_desc:  Per far in modo di organizzare la festa ti chiediamo di confermare la presenza entro il 31 Maggio 2023
+rsvp_toggle_text: cliccando qui
+
+
+# Form
+success_message: grazie
+error_message:  Errore, riprova piu tardi!
+send: Invia
+yes: si
+no: no
+
+f_title: RSVP
+input_name: Nome(i)
+input_av: Ci sarò/saremo
+input_dietary: C'e qualche cibo che non mangi
+input_kids: Porto i miei bimbi
+input_transport: Hai bisogno di un passaggio?
+input_question:  Hai qualche domanda?
+
+
+# info
+i_title: Informazioni pratiche
+i_desc: "In questa sezione cerchiamo di riassumere le opzioni di mezzi pubblici per gli ospiti che viaggiano da lontano o dall' estero per avvicinarsi il più possibile a Dronero:"
+i_aero_title: Aeroporti
+
+levaldigi: Aeroporto Cuneo (26 km da Dronero)
+caselle: Aeroporto Torino (135 km da Dronero)
+
+i_train_title: Treno
+i_station: Stazione di Cuneo
+i_station_desc: (19 km da Dronero), a cui si arriva con il treno da Torino Porta Nuova e Porta Susa, raggiungibili con taxi o navetta dall' aeroporto di Torino Caselle
+
+i_acc_title: Pernottamento
+i_acc_desc: La città di Cuneo si trova a circa 18 km da Dronero, ed offre un'ampia varietà di alberghi, b&b, alloggi.
+i_acc_desc_2: Se invece voleste soggiornare a Dronero le opzioni consigliate sono
+
+hotels:
+  - name: Albergo “Il cavallo Bianco
+    link: https://ilcavallobianco.com/www/albergo/
+  - name: Hotel “Draconerium”
+    link: https://www.draconeriumhotel.it/
+  - name: Locanda Occitana “Ca' Bianca”
+    link: http://www.locandacabianca.it/it/
+
+
+i_transport_title: Spostamenti
+i_transport_desc: "In base alle conferme ricevute, organizzeremo una navetta che potrà servire gli ospiti negli spostamenti da:"
+i_trasport_reception: a seguito della cerimonia
+i_trasport_back: alla fine dei festeggiamenti
+
+
+# Gifts
+g_title: Regali
+g_quote: Il mondo è un libro e chi non viaggia ne conosce solo una pagina.
+g_sait: Sant&apos;Agostino
+g_desc: 'Vi ringraziamo di cuore se vorrete contribuire ad arricchire il nostro libro con una nuova pagina bellissima e indimenticabile: <span className="b">{context.g_dest}</span>'
+g_dest: Vietnam
+
+g_lista_nozze: Se state invece pensando ad un regalo che contribuirà ad abbellire la nostra quotidianità, abbiamo creato una Lista Nozze presso
+g_lista_shop: BosioCasa di Cuneo
+
+
+# Donation
+d_title: Donazioni
+d_ps: 
+ - Ringraziandovi per quanto la vostra presenza renderà speciale il nostro giorno, abbiamo deciso di ricambiare il vostro affetto con una bomboniera 100% solidale.
+ - Effettueremo infatti una donazione all&apos;Associazione <span className="b">“Betania ODV”</span> che da anni accoglie minori e persone in situazione di marginalità sociale.
+ - In particolare, le nostre offerte saranno destinate al villaggio di <a href="https://goo.gl/maps/VaLo8TqSX3RQrY61A" target="_blank" rel="noreferrer" >   Emali, Kenya </a> , dove dal 2006 l&apos;Associazione ha dato vita ad una scuola materna, un orfanotrofio, un ambulatorio ed un centro di ascolto.
+ - 'Se siete interessati a leggere di più sull’Associazione “<span className="b">Betania ODV”</span> e sul suo operato viinvitiamo a farlo qui: <a  href="https://www.associazionebetaniaonlus.org/"  target="_blank"  rel="noreferrer">  https://www.associazionebetaniaonlus.org/</a>'
+
+footer_contact: Per qualsiasi informazione, dubbio o chiarimento, potete scriverci alla mail
+footer_dev: Se il sito non funziona potete prendervela col futuro sposo :)
