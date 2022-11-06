@@ -96,8 +96,8 @@ i_trasport_back: alla fine dei festeggiamenti
 # Gifts
 g_title: Regali
 g_quote: Il mondo è un libro e chi non viaggia ne conosce solo una pagina.
-g_sait: Sant&apos;Agostino
-g_desc: 'Vi ringraziamo di cuore se vorrete contribuire ad arricchire il nostro libro con una nuova pagina bellissima e indimenticabile: <span className="b">{context.g_dest}</span>'
+g_sait: Sant'Agostino
+g_desc: 'Vi ringraziamo di cuore se vorrete contribuire ad arricchire il nostro libro con una nuova pagina bellissima e indimenticabile: <span className="b">il Vietnam</span>'
 g_dest: Vietnam
 
 g_lista_nozze: Se state invece pensando ad un regalo che contribuirà ad abbellire la nostra quotidianità, abbiamo creato una Lista Nozze presso
@@ -108,8 +108,8 @@ g_lista_shop: BosioCasa di Cuneo
 d_title: Donazioni
 d_ps: 
  - Ringraziandovi per quanto la vostra presenza renderà speciale il nostro giorno, abbiamo deciso di ricambiare il vostro affetto con una bomboniera 100% solidale.
- - Effettueremo infatti una donazione all&apos;Associazione <span className="b">“Betania ODV”</span> che da anni accoglie minori e persone in situazione di marginalità sociale.
- - In particolare, le nostre offerte saranno destinate al villaggio di <a href="https://goo.gl/maps/VaLo8TqSX3RQrY61A" target="_blank" rel="noreferrer" >   Emali, Kenya </a> , dove dal 2006 l&apos;Associazione ha dato vita ad una scuola materna, un orfanotrofio, un ambulatorio ed un centro di ascolto.
+ - Effettueremo infatti una donazione all'Associazione <span className="b">“Betania ODV”</span> che da anni accoglie minori e persone in situazione di marginalità sociale.
+ - In particolare, le nostre offerte saranno destinate al villaggio di <a href="https://goo.gl/maps/VaLo8TqSX3RQrY61A" target="_blank" rel="noreferrer" >   Emali, Kenya </a> , dove dal 2006 l'Associazione ha dato vita ad una scuola materna, un orfanotrofio, un ambulatorio ed un centro di ascolto.
  - 'Se siete interessati a leggere di più sull’Associazione “<span className="b">Betania ODV”</span> e sul suo operato viinvitiamo a farlo qui: <a  href="https://www.associazionebetaniaonlus.org/"  target="_blank"  rel="noreferrer">  https://www.associazionebetaniaonlus.org/</a>'
 
 footer_contact: Per qualsiasi informazione, dubbio o chiarimento, potete scriverci alla mail

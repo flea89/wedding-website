@@ -352,7 +352,6 @@ export default function Index(context) {
             {context.i_transport_title}
           </h3>
           <p>{context.i_transport_desc}</p>
-          <p>{context.i_transport_desc}</p>
           <p>
             <span className="b">Dronero → Villa Kimera</span>,{" "}
             {context.i_trasport_reception}{" "}
