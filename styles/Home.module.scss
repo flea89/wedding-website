@@ -1,14 +1,1 @@
 @import './variables';
-
-
-.toggle {
-  display: none;
-  color: red;
-  & + form {
-    display: none;
-  }
-
-  &:checked + form {
-    display: block;
-   }
-}

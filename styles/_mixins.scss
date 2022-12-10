@@ -1,0 +1,3 @@
+@mixin ns {
+    @media (min-width: 30em) { @content; }
+  }

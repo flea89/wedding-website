@@ -1,7 +1,7 @@
 import React from "react";
 import Script from "next/script";
-import "../styles/globals.scss";
 import "tachyons/css/tachyons.css";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

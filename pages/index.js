@@ -18,6 +18,7 @@ export default function Index(context) {
   let [rsvpSent, setRsvpSent] = useState(false);
   let [rsvpError, setRsvpError] = useState(false);
   let [rsvpSending, setRsvpSending] = useState(false);
+  let [rsvpVisibility, setRsvpVisibility] = useState(false);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -77,7 +78,7 @@ export default function Index(context) {
           </a>
         ))}
       </header>
-      <main className="ph4 mw8 flex flex-column center">
+      <main className="ph4 mw8 flex flex-column center tc-ns">
         <section id="home" className="flex flex-column items-center">
           <h1 className="flex flex-column content-center">
             <div> Anna </div>
@@ -99,39 +100,43 @@ export default function Index(context) {
           <text></text>
         </section>
         <section id="schedule">
-          <div className="mb4">
+          <div className="mb4 cf">
             <h2>{context.s_title}</h2>
-            <h3>{context.s_cerimony}</h3>
-            <p>
-              {context.cerimony_location} <br></br>
-              {context.cerimony_address} <br></br>
-              {context.cerimony_city}
-            </p>
-            <a
-              href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {context.find_on_maps}
-            </a>
-            <h3 className="mt4">{context.s_reception}</h3>
-            <p>{context.s_reception_desc}</p>
-            <p>
+            <div className="fl w-100 w-50-ns">
+              <h3>{context.s_cerimony}</h3>
               <p>
-                {context.reception_location} <br></br>
-                {context.reception_address} <br></br>
-                {context.reception_city}
+                {context.cerimony_location} <br></br>
+                {context.cerimony_address} <br></br>
+                {context.cerimony_city}
               </p>
-            </p>
-            <a
-              href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {context.find_on_maps}
-            </a>
+              <a
+                href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {context.find_on_maps}
+              </a>
+            </div>
+            <div className="fl w-100 w-50-ns mt4 mt0-ns">
+              <h3>{context.s_reception}</h3>
+              <p>{context.s_reception_desc}</p>
+              <p>
+                <p>
+                  {context.reception_location} <br></br>
+                  {context.reception_address} <br></br>
+                  {context.reception_city}
+                </p>
+              </p>
+              <a
+                href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {context.find_on_maps}
+              </a>
+            </div>
           </div>
-          <p>
+          <div className="mb2">
             <Image
               src={heelsImg}
               alt="Icona tacchi a spillo"
@@ -139,229 +144,248 @@ export default function Index(context) {
               height={50}
             ></Image>
             <div>{context.lady_heels}</div>
-          </p>
+          </div>
           <div>
-            <Image
-              src={rsvpImg}
-              alt="Icona RSVP"
-              width={50}
-              height={50}
-            ></Image>
-            <div>{context.rsvp_desc} </div>
-            <label htmlFor="toggle" className="dib b underline mb3">
-              {context.rsvp_toggle_text}
-            </label>
-            <input
-              className={classNames("hidden", styles.toggle)}
-              id="toggle"
-              name=""
-              type="checkbox"
-            />
-            {rsvpSent ? (
-              <div> {context.success_message} </div>
-            ) : (
-              <form ref={form} onSubmit={onSubmit}>
-                <h3>{context.f_title}</h3>
-                <label className="db mb3">
-                  {context.input_name}:
-                  <input
-                    required
-                    className="db"
-                    type="text"
-                    name="names"
-                  ></input>
-                </label>
-                <fieldset className="db mb3">
-                  <legend>{context.input_av}: </legend>
-                  <input
-                    type="radio"
-                    id="yes"
-                    name="rsvp"
-                    value="yes"
-                    checked
-                    readOnly
-                  />
-                  <label className="ml1" htmlFor="yes">
-                    {context.yes}
+            <div className="tr tc-ns">
+              <Image
+                src={rsvpImg}
+                alt="Icona RSVP"
+                width={50}
+                height={50}
+              ></Image>
+              <div>{context.rsvp_desc} </div>
+              <button
+                className="clear-button-styles underline"
+                onClick={() => setRsvpVisibility(!rsvpVisibility)}
+              >
+                {context.rsvp_toggle_text}
+              </button>
+            </div>
+            {rsvpVisibility ? (
+              rsvpSent ? (
+                <div> {context.success_message} </div>
+              ) : (
+                <form className="mw6 center-ns" ref={form} onSubmit={onSubmit}>
+                  <h3>{context.f_title}</h3>
+                  <label className="db mb3">
+                    {context.input_name}:
+                    <input
+                      required
+                      className="db center-ns"
+                      type="text"
+                      name="names"
+                    ></input>
                   </label>
-                  <input
-                    className="ml3"
-                    type="radio"
-                    id="no"
-                    name="rsvp"
-                    value="yes"
-                  />
-                  <label className="ml1" htmlFor="no">
-                    {context.no}
+                  <fieldset className="db mb3">
+                    <legend>{context.input_av}: </legend>
+                    <input
+                      type="radio"
+                      id="yes"
+                      name="rsvp"
+                      value="yes"
+                      checked
+                      readOnly
+                    />
+                    <label className="ml1" htmlFor="yes">
+                      {context.yes}
+                    </label>
+                    <input
+                      className="ml3"
+                      type="radio"
+                      id="no"
+                      name="rsvp"
+                      value="yes"
+                    />
+                    <label className="ml1" htmlFor="no">
+                      {context.no}
+                    </label>
+                  </fieldset>
+                  <label className="db mb3">
+                    {context.input_dietary}:
+                    <textarea
+                      className="db center-ns"
+                      name="dietary-requirements"
+                    ></textarea>
                   </label>
-                </fieldset>
-                <label className="db mb3">
-                  {context.input_dietary}:
-                  <textarea
-                    className="db"
-                    name="dietary-requirements"
-                  ></textarea>
-                </label>
-                <fieldset className="db mb3">
-                  <legend>{context.input_kids}: </legend>
-                  <input type="radio" id="yes" name="kids" value="yes" />
-                  <label className="ml1" htmlFor="no">
-                    {context.yes}
+                  <fieldset className="db mb3">
+                    <legend>{context.input_kids}: </legend>
+                    <input type="radio" id="yes" name="kids" value="yes" />
+                    <label className="ml1" htmlFor="no">
+                      {context.yes}
+                    </label>
+                    <input
+                      className="ml3"
+                      type="radio"
+                      id="yes"
+                      name="kids"
+                      value="no"
+                      checked
+                      readOnly
+                    />
+                    <label className="ml1" htmlFor="yes">
+                      {context.no}
+                    </label>
+                  </fieldset>
+                  <fieldset className="db mb3">
+                    <legend>{context.input_transport} </legend>
+                    <input type="radio" id="yes" name="transport" value="yes" />
+                    <label className="ml1" htmlFor="yes">
+                      {context.yes}
+                    </label>
+                    <input
+                      className="ml3"
+                      type="radio"
+                      id="yes"
+                      name="transport"
+                      value="no"
+                      checked
+                      readOnly
+                    />
+                    <label className="ml1" htmlFor="no">
+                      {context.no}
+                    </label>
+                  </fieldset>
+                  <label className="db mb3">
+                    {context.input_question}
+                    <textarea
+                      className="db center-ns"
+                      name="questions"
+                    ></textarea>
                   </label>
-                  <input
-                    className="ml3"
-                    type="radio"
-                    id="yes"
-                    name="kids"
-                    value="no"
-                    checked
-                    readOnly
-                  />
-                  <label className="ml1" htmlFor="yes">
-                    {context.no}
-                  </label>
-                </fieldset>
-                <fieldset className="db mb3">
-                  <legend>{context.input_transport} </legend>
-                  <input type="radio" id="yes" name="transport" value="yes" />
-                  <label className="ml1" htmlFor="yes">
-                    {context.yes}
-                  </label>
-                  <input
-                    className="ml3"
-                    type="radio"
-                    id="yes"
-                    name="transport"
-                    value="no"
-                    checked
-                    readOnly
-                  />
-                  <label className="ml1" htmlFor="no">
-                    {context.no}
-                  </label>
-                </fieldset>
-                <label className="db mb3">
-                  {context.input_question}
-                  <textarea className="db" name="questions"></textarea>
-                </label>
-                <div className="db relative pb2">
-                  <button className="db" type="submit">
-                    {context.send}
-                  </button>
-                  <div className="absolute w-100">
-                    <div hidden={!rsvpSending} className="spinner">
-                      <div className="bounce1"></div>
-                      <div className="bounce2"></div>
-                      <div className="bounce3"></div>
+                  <div className="db relative pb2">
+                    <button className="db center-ns" type="submit">
+                      {context.send}
+                    </button>
+                    <div className="absolute w-100">
+                      <div hidden={!rsvpSending} className="spinner">
+                        <div className="bounce1"></div>
+                        <div className="bounce2"></div>
+                        <div className="bounce3"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                {rsvpError ? (
-                  <div className="dark-red"> Errore, riprova piu tardi!</div>
-                ) : (
-                  ""
-                )}
-              </form>
+                  {rsvpError ? (
+                    <div className="dark-red"> Errore, riprova piu tardi!</div>
+                  ) : (
+                    ""
+                  )}
+                </form>
+              )
+            ) : (
+              <></>
             )}
           </div>
         </section>
-        <section id="info">
+        <section id="info" className="tc-ns">
           <h2>{context.i_title}</h2>
           <p>{context.i_desc}</p>
-          <h3 className="mt4">
-            <Image
-              src={planeImg}
-              className="mr2"
-              alt="Icona aeroplano"
-              width={20}
-              height={20}
-            ></Image>
-            {context.i_aero_title}
-          </h3>
-          <dl>
-            <dt className="mb1 b">{context.levaldigi}</dt>
-            <dd className="ml0 mb3">
-              <a
-                href="https://g.page/cuf_cuneoairport?share"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {context.find_on_maps}
-              </a>
-            </dd>
-            <dt className="mb1 b">{context.caselle}</dt>
-            <dd className="ml0 mb3">
-              <a
-                href="https://goo.gl/maps/5LdGddLw4UekbT698"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {context.find_on_maps}
-              </a>
-            </dd>
-          </dl>
-          <h3 className="mt4">
-            <Image
-              src={trainImg}
-              className="mr2"
-              alt="Icona treno"
-              width={20}
-              height={20}
-            ></Image>
-            {context.i_train_title}
-          </h3>
-          <p>
-            <a
-              href="https://goo.gl/maps/tSezF4RzSmQAyGfi9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {context.i_station}
-            </a>{" "}
-            {context.i_station_desc}
-          </p>
-          <h3>
-            <Image
-              src={bedImg}
-              className="mr2"
-              alt="Icona hotel"
-              width={20}
-              height={20}
-            ></Image>
-            {context.i_acc_title}
-          </h3>
-          <p>{context.i_acc_desc}</p>
-          <p>{context.i_acc_desc_2}</p>
-          <ul>
-            {context.hotels.map((h) => (
-              <li key={h.name}>
-                <a href={h.link} target="_blank" rel="noreferrer">
-                  {h.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <h3 className="mt4">
-            <Image
-              src={busImg}
-              className="mr2"
-              alt="Icona bus"
-              width={20}
-              height={20}
-            ></Image>
-            {context.i_transport_title}
-          </h3>
-          <p>{context.i_transport_desc}</p>
-          <p>
-            <span className="b">Dronero → Villa Kimera</span>,{" "}
-            {context.i_trasport_reception}{" "}
-          </p>
-          <p>
-            <span className="b">Villa Kimera → Cuneo → Dronero</span>,{" "}
-            {context.i_trasport_back}{" "}
-          </p>
+          <div className="mt4 cf">
+            <div className="fl w-100 w-50-ns pr4-ns">
+              <h3>
+                <Image
+                  src={planeImg}
+                  className="mr2"
+                  alt="Icona aeroplano"
+                  width={20}
+                  height={20}
+                ></Image>
+                {context.i_aero_title}
+              </h3>
+              <dl>
+                <dt className="mb1 b">{context.levaldigi}</dt>
+                <dd className="ml0 mb3">
+                  <a
+                    href="https://g.page/cuf_cuneoairport?share"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {context.find_on_maps}
+                  </a>
+                </dd>
+                <dt className="mb1 b">{context.caselle}</dt>
+                <dd className="ml0 mb3">
+                  <a
+                    href="https://goo.gl/maps/5LdGddLw4UekbT698"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {context.find_on_maps}
+                  </a>
+                </dd>
+              </dl>
+            </div>
+            <div className="fl w-100 w-50-ns mt4 mt0-ns">
+              <h3 className="">
+                <Image
+                  src={trainImg}
+                  className="mr2"
+                  alt="Icona treno"
+                  width={20}
+                  height={20}
+                ></Image>
+                {context.i_train_title}
+              </h3>
+              <p>
+                <a
+                  href="https://goo.gl/maps/tSezF4RzSmQAyGfi9"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {context.i_station}
+                </a>{" "}
+                {context.i_station_desc}
+              </p>
+            </div>
+          </div>
+          <div className="mt4 cf tc-ns">
+            <div className="fl w-100 w-50-ns pr4-ns">
+              <h3>
+                <Image
+                  src={bedImg}
+                  className="mr2"
+                  alt="Icona hotel"
+                  width={20}
+                  height={20}
+                ></Image>
+                {context.i_acc_title}
+              </h3>
+              <p>{context.i_acc_desc}</p>
+              <p>{context.i_acc_desc_2}</p>
+              <ul className="dib tl">
+                {context.hotels.map((h) => (
+                  <li key={h.name}>
+                    <a href={h.link} target="_blank" rel="noreferrer">
+                      {h.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="fl w-100 w-50-ns mt4 mt0-ns">
+              <h3 className="">
+                <Image
+                  src={busImg}
+                  className="mr2"
+                  alt="Icona bus"
+                  width={20}
+                  height={20}
+                ></Image>
+                {context.i_transport_title}
+              </h3>
+              <p>{context.i_transport_desc}</p>
+              <p>
+                <span className="b">Dronero → Villa Kimera</span>,{" "}
+                {context.i_trasport_reception}{" "}
+              </p>
+              <p>
+                <span className="b">Villa Kimera → Cuneo → Dronero</span>,{" "}
+                {context.i_trasport_back}{" "}
+              </p>
+            </div>
+          </div>
         </section>
-        <section id="schedule">
+
+        <section id="wishing-well">
           <h2>{context.g_title}</h2>
           <div className="quote pb4 dib">
             <p className="relative pa4 pb0 mb0">
@@ -391,23 +415,25 @@ export default function Index(context) {
             className="mt4 mb3"
             dangerouslySetInnerHTML={{ __html: context.g_desc }}
           ></p>
-          <div className="mb4">
-            <h4>Coordinate bancarie (euro):</h4>
-            <p>
-              Denominazione Conto: Anna Astesano <br></br>
-              IBAN: IT42B0843946280000030119924 <br></br>
-              BIC: CCRTIT2TCAR <br></br>
-              Causale: regalo di nozze
-            </p>
-          </div>
-          <div>
-            <h4>Bank details (pounds):</h4>
-            <p>
-              Account name: Paolo Chillari <br></br>
-              Sort Code: 20-41-41<br></br>
-              Account number: 60373303<br></br>
-              Reason: wedding gift
-            </p>
+          <div className="mb4 mt4 cf">
+            <div className="fl w-100 w-50-ns pr4-ns">
+              <h4>Coordinate bancarie (euro):</h4>
+              <p>
+                Denominazione Conto: Anna Astesano <br></br>
+                IBAN: IT42B0843946280000030119924 <br></br>
+                BIC: CCRTIT2TCAR <br></br>
+                Causale: regalo di nozze
+              </p>
+            </div>
+            <div className="fl w-100 w-50-ns mt4 mt0-ns">
+              <h4>Bank details (pounds):</h4>
+              <p>
+                Account name: Paolo Chillari <br></br>
+                Sort Code: 20-41-41<br></br>
+                Account number: 60373303<br></br>
+                Reason: wedding gift
+              </p>
+            </div>
           </div>
           <div dangerouslySetInnerHTML={{ __html: context.g_list }}></div>
         </section>
