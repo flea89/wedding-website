@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     const msgMe = {
       to: ["killer.paolo@gmail.com"], // Change to your recipient
-      cc: ["annaarpa93@gmail.com"],
+      cc: ["annarpa93@gmail.com"],
       from: "info@annaepaolo.com", // Change to your verified sender
       replyTo: "killer.paolo@gmail.com",
       subject: "RSVP matrimonio",
