@@ -128,7 +128,7 @@ export default function Index(context) {
                 </p>
               </p>
               <a
-                href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
+                href="https://goo.gl/maps/cbqqZZt36PAM7toy9"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -295,7 +295,7 @@ export default function Index(context) {
                 <dt className="mb1 b">{context.levaldigi}</dt>
                 <dd className="ml0 mb3">
                   <a
-                    href="https://g.page/cuf_cuneoairport?share"
+                    href="https://goo.gl/maps/2GmPcmM8LPmbDew57"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -426,7 +426,7 @@ export default function Index(context) {
               </p>
             </div>
             <div className="fl w-100 w-50-ns mt4 mt0-ns">
-              <h4>Bank details (pounds):</h4>
+              <h4>Bank details (GBP):</h4>
               <p>
                 Account name: Paolo Chillari <br></br>
                 Sort Code: 20-41-41<br></br>

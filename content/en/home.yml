@@ -12,9 +12,9 @@ menu:
     link: '#schedule'
   - text: Info
     link: '#info'
-  - text: regali
-    link: '#gifts'
-  - text: Donazioni
+  - text: Wishing Well
+    link: '#wishing-well'
+  - text: Donations
     link: '#donations'
 
 #Generic
@@ -91,7 +91,7 @@ i_trasport_back: at the end of celebrations
 
 # Gifts
 g_title: Whishing Well
-g_quote: he world is a book, and those who do not travel read only a page
+g_quote: The world is a book, and those who do not travel read only a page
 g_sait: Saint Augustine
 g_desc: If you would like to contribute to broaden our book with a new, unforgettable page such as Vietnam we could not be more thankful.
 
