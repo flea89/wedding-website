@@ -1,0 +1,10 @@
+meta:
+  title: Anna e Paolo - Recipes
+  desc: "A collection of our recipes"
+  site: "https://annaepaolo.com/recipes"
+
+title: Anna & Paolo - Our favourite recipes
+
+menu:
+  - text: All recipes
+    link: "#"

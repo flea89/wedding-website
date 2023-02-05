@@ -1,8 +1,6 @@
 import React, { useRef, useState } from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.scss";
 import { getPageCopy } from "../utils/getPageCopy";
-import metaImg from "../public/meta.jpg";
 import heroImg from "../public/hero.jpg";
 import heelsImg from "../public/heels.png";
 import rsvpImg from "../public/rsvp.png";
@@ -12,6 +10,7 @@ import bedImg from "../public/bed.png";
 import busImg from "../public/bus.png";
 import classNames from "classnames";
 import Image from "next/image";
+import HeadMeta from "../components/HeadMeta";
 
 export default function Index(context) {
   let form = useRef();
@@ -48,28 +47,7 @@ export default function Index(context) {
   return (
     <div>
       <Head>
-        <title>{context.meta.title}</title>
-        <meta name="description" content={context.meta.desc} />
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:image"
-          content={`${context.meta.site}${metaImg.src}`}
-        />
-        <meta property="og:title" content={context.meta.title} />
-        <meta
-          name="description"
-          content={context.meta.desc}
-          itemProp="description"
-        />
-        <meta property="og:description" content={context.meta.desc} />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={context.meta.title} />
-        <meta name="twitter:description" content={context.meta.desc} />
-        <meta
-          name="twitter:image"
-          content={`${context.meta.site}${heroImg.src}`}
-        />
+        <HeadMeta pageContext={context} />
       </Head>
       <header className="ph4 w-100 pv3 mb4 mb5-ns bt bb overflow-auto position-sticky-top background-white z1">
         {context.menu.map((i, index) => (
@@ -121,11 +99,9 @@ export default function Index(context) {
               <h3>{context.s_reception}</h3>
               <p>{context.s_reception_desc}</p>
               <p>
-                <p>
-                  {context.reception_location} <br></br>
-                  {context.reception_address} <br></br>
-                  {context.reception_city}
-                </p>
+                {context.reception_location} <br></br>
+                {context.reception_address} <br></br>
+                {context.reception_city}
               </p>
               <a
                 href="https://goo.gl/maps/cbqqZZt36PAM7toy9"
