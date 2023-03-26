@@ -58,7 +58,7 @@ input_name: Nome(i)
 input_av: Ci sarò/saremo
 input_dietary: C'e qualche cibo che non mangi
 input_kids: Porto i miei bimbi
-input_transport: Hai bisogno di un passaggio?
+input_transport: Hai bisogno di un passaggio il giorno del matrimonio? (Organizzeremo una navetta, vedi <a href="#info">Spostamenti</a>)
 input_question:  Hai qualche domanda?
 
 
@@ -86,6 +86,7 @@ hotels:
   - name: Locanda Occitana “Ca' Bianca”
     link: http://www.locandacabianca.it/it/
 
+i_acc_call: Al momento della prenotazione, comunicate di essere invitati al nostro matrimonio.
 
 i_transport_title: Spostamenti
 i_transport_desc: "In base alle conferme ricevute, organizzeremo una navetta che potrà servire gli ospiti negli spostamenti da:"

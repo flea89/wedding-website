@@ -39,8 +39,8 @@ reception_location: Villa Kimera
 reception_address: Via Basse di Chiusano 10
 reception_city: 12100 Cuneo
 
-lady_heels: "Gravel and grass both at the Santuario di Madonna di Ripoli and Villa Kimera!"
-rsvp_desc:  Per far in modo di organizzare la festa ti chiediamo di confermare la presenza entro il 31 Maggio 2023
+lady_heels: "Gravel and grass both at the Santuario di Madonna di Ripoli and Villa Kimera! Choose your footwear wisely."
+rsvp_desc:  In order to organise everything on time, we kindly ask you to RSVP no later than Wednesday, the 31st of May
 rsvp_toggle_text: click here
 
 
@@ -55,9 +55,9 @@ f_title: RSVP
 input_name: Name(s)
 input_av: I/we will be there
 input_dietary: Dietary requirements
-input_kids: We bring our kids
-input_transport: Do you need a lift?
-input_question:  Any other question?
+input_kids: We will bring our kids
+input_transport: Do you need a lift on the wedding day? </br> (We're organising a shuttle, see <a href="#info">Getting around</a>)
+input_question:  Any other questions?
 
 # info
 i_title: Useful info
@@ -72,20 +72,19 @@ i_station: Stazione di Cuneo
 i_station_desc: (19 km from Dronero) can be reached by train from Torino Porta Nuova Station e Porta Susa Station. To get to the departing stations from the airport, you can get a taxi or airport shuttle to the centre. 
 
 i_acc_title: Accomodation
-i_acc_desc: Cuneo is a small city, 18 km far from Dronero, which offers a big variety of hotels, b&b and options to sleep over.
-i_acc_desc_2: "If you would like instead to get the full experience and sleep in the legendary Dronero, these are the options we would suggest:"
+i_acc_desc: Cuneo is a small city, 18 km from Dronero, which offers a big variety of hotels, b&bs and options to stay.
+i_acc_desc_2: "If you would like instead to get the full experience and stay in the legendary Dronero, these are the options we would suggest"
 
 hotels:
-  - name: Albergo “Il cavallo Bianco
-    link: https://ilcavallobianco.com/www/albergo/
   - name: Hotel “Draconerium”
     link: https://www.draconeriumhotel.it/
   - name: Locanda Occitana “Ca' Bianca”
     link: http://www.locandacabianca.it/it/
 
+i_acc_call:  When booking mention to the hotel that you are a guest at our wedding.
 
 i_transport_title: Getting around
-i_transport_desc: "We will organise a shuttle service, according to the answers we will receive from our guests, for the following trips:"
+i_transport_desc: "We will organise a shuttle service, according to the answers we receive from our guests, for the following trips:"
 i_trasport_reception: after the ceremony
 i_trasport_back: at the end of celebrations
 
@@ -94,7 +93,7 @@ i_trasport_back: at the end of celebrations
 g_title: Whishing Well
 g_quote: The world is a book, and those who do not travel read only a page
 g_sait: Saint Augustine
-g_desc: If you would like to contribute to broaden our book with a new, unforgettable page such as Vietnam we could not be more thankful.
+g_desc: If you would like to contribute to broadening our book with a new, unforgettable page such as Vietnam we could not be more thankful.
 
 # g_list: Se state invece pensando ad un regalo che contribuirà ad abbellire la nostra quotidianità, abbiamo creato una Lista Nozze presso <a href="https://bosiocasa.it/index.asp" target="_blank" rel="noreferrer"> BosioCasa di Cuneo </a>
 
@@ -105,8 +104,8 @@ d_title: Donations
 d_ps: 
  - Thanking you, as your presence will make our wedding day as special as it could get, we decided to return your affection with 100% solidarity wedding favors.
  - We will proceed with a donation to Associazione <span className="b">“Betania ODV”</span>  that welcomes minors and people in situations of social marginalisation.
- - More specifically, our offers will be destined to the village of Emali, in Kenya, where since 2006 the association has created a primary school, an orphanage, a clinic, and a consultation centre. 
+ - More specifically, our offers will be destined for the village of Emali, in Kenya, where since 2006 the association has created a primary school, an orphanage, a clinic, and a consultation centre. 
  - 'If you would like to learn more about Associazione “Betania ODV” and its work you can do it here <a  href="https://www.associazionebetaniaonlus.org/"  target="_blank"  rel="noreferrer">  https://www.associazionebetaniaonlus.org/</a>'
 
-footer_contact: For any extra information, doubt or question feel free to write to us here
+footer_contact: For any extra information, doubts or questions feel free to write to us here
 footer_dev: If the site is broken you can blame the future groom :)

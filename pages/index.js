@@ -156,23 +156,23 @@ export default function Index(context) {
                     <legend>{context.input_av}: </legend>
                     <input
                       type="radio"
-                      id="yes"
+                      id="rsvp_yes"
                       name="rsvp"
                       value="yes"
                       checked
                       readOnly
                     />
-                    <label className="ml1" htmlFor="yes">
+                    <label className="ml1" htmlFor="rsvp_yes">
                       {context.yes}
                     </label>
                     <input
                       className="ml3"
                       type="radio"
-                      id="no"
+                      id="rsvp_no"
                       name="rsvp"
-                      value="yes"
+                      value="no"
                     />
-                    <label className="ml1" htmlFor="no">
+                    <label className="ml1" htmlFor="rsvp_no">
                       {context.no}
                     </label>
                   </fieldset>
@@ -185,39 +185,48 @@ export default function Index(context) {
                   </label>
                   <fieldset className="db mb3">
                     <legend>{context.input_kids}: </legend>
-                    <input type="radio" id="yes" name="kids" value="yes" />
-                    <label className="ml1" htmlFor="no">
+                    <input type="radio" id="kids_yes" name="kids" value="yes" />
+                    <label className="ml1" htmlFor="kids_yes">
                       {context.yes}
                     </label>
                     <input
                       className="ml3"
                       type="radio"
-                      id="yes"
+                      id="kids_no"
                       name="kids"
                       value="no"
                       checked
                       readOnly
                     />
-                    <label className="ml1" htmlFor="yes">
+                    <label className="ml1" htmlFor="kids_no">
                       {context.no}
                     </label>
                   </fieldset>
                   <fieldset className="db mb3">
-                    <legend>{context.input_transport} </legend>
-                    <input type="radio" id="yes" name="transport" value="yes" />
-                    <label className="ml1" htmlFor="yes">
+                    <legend
+                      dangerouslySetInnerHTML={{
+                        __html: context.input_transport,
+                      }}
+                    />
+                    <input
+                      type="radio"
+                      id="transport_yes"
+                      name="transport"
+                      value="yes"
+                    />
+                    <label className="ml1" htmlFor="transport_yes">
                       {context.yes}
                     </label>
                     <input
                       className="ml3"
                       type="radio"
-                      id="yes"
+                      id="transport_no"
                       name="transport"
                       value="no"
                       checked
                       readOnly
                     />
-                    <label className="ml1" htmlFor="no">
+                    <label className="ml1" htmlFor="transport_no">
                       {context.no}
                     </label>
                   </fieldset>
@@ -336,6 +345,7 @@ export default function Index(context) {
                   </li>
                 ))}
               </ul>
+              <p>{context.i_acc_call}</p>
             </div>
             <div className="fl w-100 w-50-ns mt4 mt0-ns">
               <h3 className="">
