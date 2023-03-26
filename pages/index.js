@@ -443,10 +443,11 @@ export default function Index(context) {
 }
 
 export async function getStaticProps({ locale }) {
+  console.log(locale);
   return {
     props: {
       locale,
-      ...(await getPageCopy("home", locale)),
+      ...(await getPageCopy("home", { locale })),
     },
   };
 }
