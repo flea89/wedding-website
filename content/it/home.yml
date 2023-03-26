@@ -79,8 +79,6 @@ i_acc_desc: La città di Cuneo si trova a circa 18 km da Dronero, ed offre un'am
 i_acc_desc_2: Se invece voleste soggiornare a Dronero le opzioni consigliate sono
 
 hotels:
-  - name: Albergo “Il cavallo Bianco
-    link: https://ilcavallobianco.com/www/albergo/
   - name: Hotel “Draconerium”
     link: https://www.draconeriumhotel.it/
   - name: Locanda Occitana “Ca' Bianca”
