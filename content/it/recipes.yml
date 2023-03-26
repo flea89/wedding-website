@@ -1,0 +1,10 @@
+meta:
+  title: Anna e Paolo - Ricette
+  desc: "Il nostro libro di ricette"
+  site: "https://annaepaolo.com/recipes"
+
+title: Il nostro libro di ricette
+
+menu:
+  - text: Tutte le ricette
+    link: "/recipes"
