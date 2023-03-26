@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Head from "next/head";
-import { getPageCopy } from "../utils/getPageCopy";
+import { getPageCopy } from "../utils/fsUtil";
 import heroImg from "../public/hero.jpg";
 import heelsImg from "../public/heels.png";
 import rsvpImg from "../public/rsvp.png";

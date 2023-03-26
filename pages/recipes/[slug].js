@@ -1,8 +1,6 @@
 import { marked } from "marked";
 import React from "react";
-import { getPageCopy } from "../../utils/getPageCopy";
-import { promises as fs } from "fs";
-import path from "path";
+import { getAllRecipes, getPageCopy } from "../../utils/fsUtil";
 import RecipeLayout from "../../components/layouts/recipe";
 
 export default function Recipe(props) {
@@ -27,17 +25,20 @@ export async function getStaticProps({ locale, params }) {
 }
 
 export async function getStaticPaths({ locales }) {
-  const recipies = await fs.readdir(
-    path.join(process.cwd(), "content", "en", "recipes/")
-  );
+  const recipesByLocales = {};
+
+  for (let locale of locales) {
+    recipesByLocales[locale] = (await getAllRecipes(locale)).slugs;
+  }
 
   return {
-    paths: recipies.flatMap((fileName) =>
-      locales.map((locale) => ({
+    paths: Object.keys(recipesByLocales).flatMap((locale) => {
+      const recipesByLocale = recipesByLocales[locale];
+      return recipesByLocale.map((fileName) => ({
         params: { slug: fileName.replace(".yml", "") },
         locale,
-      }))
-    ),
+      }));
+    }),
     fallback: false,
   };
 }
