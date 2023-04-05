@@ -18,13 +18,28 @@ export default function Index(context) {
   let [rsvpError, setRsvpError] = useState(false);
   let [rsvpSending, setRsvpSending] = useState(false);
   let [rsvpVisibility, setRsvpVisibility] = useState(false);
+  let [formData, setFormData] = useState({
+    names: "",
+    rsvp: "yes",
+    transport: "yes",
+    "dietary-requirements": "",
+    kids: "no",
+    questions: "",
+  });
+
+  const handleInputChange = (event) => {
+    const target = event.target;
+    let value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   async function onSubmit(e) {
     e.preventDefault();
-    const data = Object.values(form.current).reduce((obj, field) => {
-      obj[field.name] = field.value;
-      return obj;
-    }, {});
     setRsvpSending(true);
     try {
       const res = await fetch("/api/rsvp", {
@@ -32,7 +47,7 @@ export default function Index(context) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
       setRsvpError(!res.ok);
@@ -141,7 +156,7 @@ export default function Index(context) {
               rsvpSent ? (
                 <div> {context.success_message} </div>
               ) : (
-                <form className="mw6 center-ns" ref={form} onSubmit={onSubmit}>
+                <form className="mw6 center-ns" onSubmit={onSubmit}>
                   <h3>{context.f_title}</h3>
                   <label className="db mb3">
                     {context.input_name}:
@@ -149,7 +164,9 @@ export default function Index(context) {
                       required
                       className="db center-ns"
                       type="text"
+                      onChange={handleInputChange}
                       name="names"
+                      value={formData.names}
                     ></input>
                   </label>
                   <fieldset className="db mb3">
@@ -157,9 +174,10 @@ export default function Index(context) {
                     <input
                       type="radio"
                       id="rsvp_yes"
+                      onChange={handleInputChange}
                       name="rsvp"
                       value="yes"
-                      checked
+                      checked={formData.rsvp === "yes"}
                       readOnly
                     />
                     <label className="ml1" htmlFor="rsvp_yes">
@@ -169,8 +187,10 @@ export default function Index(context) {
                       className="ml3"
                       type="radio"
                       id="rsvp_no"
+                      onChange={handleInputChange}
                       name="rsvp"
                       value="no"
+                      checked={formData.rsvp === "no"}
                     />
                     <label className="ml1" htmlFor="rsvp_no">
                       {context.no}
@@ -180,12 +200,21 @@ export default function Index(context) {
                     {context.input_dietary}:
                     <textarea
                       className="db center-ns"
+                      onChange={handleInputChange}
                       name="dietary-requirements"
+                      value={formData["dietary-requirements"]}
                     ></textarea>
                   </label>
                   <fieldset className="db mb3">
                     <legend>{context.input_kids}: </legend>
-                    <input type="radio" id="kids_yes" name="kids" value="yes" />
+                    <input
+                      type="radio"
+                      id="kids_yes"
+                      onChange={handleInputChange}
+                      name="kids"
+                      value="yes"
+                      checked={formData.kids === "yes"}
+                    />
                     <label className="ml1" htmlFor="kids_yes">
                       {context.yes}
                     </label>
@@ -193,10 +222,10 @@ export default function Index(context) {
                       className="ml3"
                       type="radio"
                       id="kids_no"
+                      onChange={handleInputChange}
                       name="kids"
                       value="no"
-                      checked
-                      readOnly
+                      checked={formData.kids === "no"}
                     />
                     <label className="ml1" htmlFor="kids_no">
                       {context.no}
@@ -211,8 +240,10 @@ export default function Index(context) {
                     <input
                       type="radio"
                       id="transport_yes"
+                      onChange={handleInputChange}
                       name="transport"
                       value="yes"
+                      checked={formData.transport === "yes"}
                     />
                     <label className="ml1" htmlFor="transport_yes">
                       {context.yes}
@@ -221,10 +252,10 @@ export default function Index(context) {
                       className="ml3"
                       type="radio"
                       id="transport_no"
+                      onChange={handleInputChange}
                       name="transport"
                       value="no"
-                      checked
-                      readOnly
+                      checked={formData.transport === "no"}
                     />
                     <label className="ml1" htmlFor="transport_no">
                       {context.no}
@@ -234,7 +265,9 @@ export default function Index(context) {
                     {context.input_question}
                     <textarea
                       className="db center-ns"
+                      onChange={handleInputChange}
                       name="questions"
+                      value={formData.questions}
                     ></textarea>
                   </label>
                   <div className="db relative pb2">
