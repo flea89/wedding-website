@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import RecipeLayout from "../../components/layouts/recipe";
+import RecipeLayout from "../../components/layouts/recipe-layout";
 import { getAllRecipes, getPageCopy } from "../../utils/fsUtil";
 import { useRouter } from "next/router";
 import { marked } from "marked";
