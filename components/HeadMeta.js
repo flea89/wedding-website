@@ -10,16 +10,14 @@ import heroImg from "../public/hero.jpg";
  * @returns
  */
 export default function HeadMeta({ pageContext }) {
+  const image = pageContext.meta.img || metaImg.src;
+
   return (
-    <>
-      <title>{pageContext.meta.title}</title>
+    <Head>
       <meta name="description" content={pageContext.meta.desc} />
       <link rel="icon" href="/favicon.ico" />
-      <meta
-        property="og:image"
-        content={`${pageContext.meta.site}${metaImg.src}`}
-      />
-      <meta property="og:title" content={pageContext.meta.title} />
+      <meta property="og:image" content={`${pageContext.meta.site}${image}`} />
+      <meta property="og:title" content={pageContext.meta.title} key="title" />
       <meta
         name="description"
         content={pageContext.meta.desc}
@@ -30,10 +28,8 @@ export default function HeadMeta({ pageContext }) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageContext.meta.title} />
       <meta name="twitter:description" content={pageContext.meta.desc} />
-      <meta
-        name="twitter:image"
-        content={`${pageContext.meta.site}${heroImg.src}`}
-      />
-    </>
+      <meta name="twitter:image" content={`${pageContext.meta.site}${image}`} />
+      <title>{pageContext.meta.title}</title>
+    </Head>
   );
 }

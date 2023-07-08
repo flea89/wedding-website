@@ -61,9 +61,8 @@ export default function Index(context) {
 
   return (
     <div>
-      <Head>
-        <HeadMeta pageContext={context} />
-      </Head>
+      <HeadMeta pageContext={context} />
+
       <header className="ph4 w-100 pv3 mb4 mb5-ns bt bb overflow-auto position-sticky-top background-white z1">
         {context.menu.map((i, index) => (
           <a className="mr3 ttc" key={index} href={i.link}>
