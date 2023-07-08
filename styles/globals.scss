@@ -73,21 +73,22 @@ h6, .h6 {
 
 
 section {
+  &:not(.no-border) {
+    &::after {
+      content: '';
+      width: 60%;
+      height: 30px;
+      // background-color: $dark;
+      margin: rem(30px) auto;
+      display: block;
+      background-image: url('/leaf.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: space;
 
-  &::after {
-    content: '';
-    width: 60%;
-    height: 30px;
-    // background-color: $dark;
-    margin: rem(30px) auto;
-    display: block;
-    background-image: url('/leaf.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: space;
-
-    @include ns() {
-      margin: rem(45px) auto;
+      @include ns() {
+        margin: rem(45px) auto;
+      }
     }
   }
 

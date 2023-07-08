@@ -32,9 +32,8 @@ export default function Index({ context, recipes }) {
 
   return (
     <>
-      <HeadMeta pageContext={context}></HeadMeta>
-      <h1>{context.title}</h1>
       <section
+        className="no-border"
         dangerouslySetInnerHTML={{ __html: marked(context.description || "") }}
       ></section>
       <ul>
