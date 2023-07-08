@@ -6,7 +6,7 @@ export async function getPageCopy(page, { locale = "en", isRecipe = false }) {
   let recipeBase = {};
 
   if (isRecipe) {
-    // If a recepy, we get the base content, so that we share menu content.
+    // If a recipe, we get the base content, so that we share menu content.
     recipeBase = await import(`../content/${locale}/recipes.yml`);
   }
 
@@ -15,7 +15,7 @@ export async function getPageCopy(page, { locale = "en", isRecipe = false }) {
   try {
     copy = await import(`../content/${locale}/${filePath}`);
   } catch (e) {
-    copy = await import(`../content/en/${filePath}`);
+    copy = await import(`../content/it/${filePath}`);
   }
 
   return {
@@ -27,11 +27,12 @@ export async function getPageCopy(page, { locale = "en", isRecipe = false }) {
 
 export async function getAllRecipes(locale = "en") {
   const slugs = (
-    await fs.readdir(path.join(process.cwd(), "content", locale, "recipes/"))
+    await fs.readdir(path.join(process.cwd(), "content", locale, "recipes"))
   ).map((fileName) => fileName.replace(".yml", ""));
   const recipes = await Promise.all(
     slugs.map((slug) => getPageCopy(slug, { locale, isRecipe: true }))
   );
+
   return {
     slugs,
     recipes,
