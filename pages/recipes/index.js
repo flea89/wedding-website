@@ -4,6 +4,7 @@ import RecipeLayout from "../../components/layouts/recipe-layout";
 import { getAllRecipes, getPageCopy } from "../../utils/fsUtil";
 import { useRouter } from "next/router";
 import { marked } from "marked";
+import HeadMeta from "../../components/HeadMeta";
 
 export default function Index({ context, recipes }) {
   // NextJS automatic locale detection works only on index pages.
@@ -31,6 +32,7 @@ export default function Index({ context, recipes }) {
 
   return (
     <>
+      <HeadMeta pageContext={context}></HeadMeta>
       <h1>{context.title}</h1>
       <section
         dangerouslySetInnerHTML={{ __html: marked(context.description || "") }}

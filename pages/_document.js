@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <link rel="icon" href="/favicon.ico" key="favico" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"

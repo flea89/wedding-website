@@ -14,22 +14,54 @@ export default function HeadMeta({ pageContext }) {
 
   return (
     <Head>
-      <meta name="description" content={pageContext.meta.desc} />
-      <link rel="icon" href="/favicon.ico" />
-      <meta property="og:image" content={`${pageContext.meta.site}${image}`} />
-      <meta property="og:title" content={pageContext.meta.title} key="title" />
+      <title key="title">{pageContext.meta.title}</title>
+
+      <meta
+        name="description"
+        key="description"
+        content={pageContext.meta.desc}
+      />
+      <meta
+        property="og:image"
+        content={`${pageContext.meta.site}${image}`}
+        key="og:image"
+      />
+      <meta
+        property="og:title"
+        content={pageContext.meta.title}
+        key="og:title"
+      />
       <meta
         name="description"
         content={pageContext.meta.desc}
         itemProp="description"
       />
-      <meta property="og:description" content={pageContext.meta.desc} />
+      <meta
+        property="og:description"
+        content={pageContext.meta.desc}
+        key="og:description"
+      />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageContext.meta.title} />
-      <meta name="twitter:description" content={pageContext.meta.desc} />
-      <meta name="twitter:image" content={`${pageContext.meta.site}${image}`} />
-      <title>{pageContext.meta.title}</title>
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+        key="twitter:card"
+      />
+      <meta
+        name="twitter:title"
+        content={pageContext.meta.title}
+        key="twitter:title"
+      />
+      <meta
+        name="twitter:description"
+        content={pageContext.meta.desc}
+        key="twitter:description"
+      />
+      <meta
+        name="twitter:image"
+        content={`${pageContext.meta.site}${image}`}
+        key="twitter:image"
+      />
     </Head>
   );
 }
