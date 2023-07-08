@@ -33,7 +33,7 @@ export default function Index({ context, recipes }) {
     <>
       <h1>{context.title}</h1>
       <section
-        dangerouslySetInnerHTML={{ __html: marked(context.description) }}
+        dangerouslySetInnerHTML={{ __html: marked(context.description || "") }}
       ></section>
       <ul>
         {Object.keys(recipeByCategory).map((category) => (
