@@ -478,7 +478,6 @@ export default function Index(context) {
 }
 
 export async function getStaticProps({ locale }) {
-  console.log(locale);
   return {
     props: {
       locale,
