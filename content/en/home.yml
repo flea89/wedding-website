@@ -1,5 +1,5 @@
 meta:
-  title: Anna e Paolo - Wedding 
+  title: Anna e Paolo - Wedding
   desc: Anna e Paolo wedding website with all the information you need.
   site: https://annaepaolo.com
   img: ../public/meta.jpg
@@ -32,12 +32,14 @@ s_cerimony: Ceremony
 cerimony_location: Santuario di Ripoli
 cerimony_address: Via Montemale
 cerimony_city: Dronero CN
+cerimony_time: 15:30pm
 
 s_reception: Reception
 s_reception_desc: After the ceremony, celebrations will continue at
 reception_location: Villa Kimera
 reception_address: Via Basse di Chiusano 10
 reception_city: 12100 Cuneo
+reception_time: 18:00pm
 
 lady_heels: "Gravel and grass both at the Santuario di Madonna di Ripoli and Villa Kimera! Choose your footwear wisely."
 rsvp_desc:  In order to organise everything on time, we kindly ask you to RSVP no later than Wednesday, the 31st of May
@@ -69,7 +71,7 @@ caselle: Aeroporto Torino (135 km from Dronero)
 
 i_train_title: Trains
 i_station: Stazione di Cuneo
-i_station_desc: (19 km from Dronero) can be reached by train from Torino Porta Nuova Station e Porta Susa Station. To get to the departing stations from the airport, you can get a taxi or airport shuttle to the centre. 
+i_station_desc: (19 km from Dronero) can be reached by train from Torino Porta Nuova Station e Porta Susa Station. To get to the departing stations from the airport, you can get a taxi or airport shuttle to the centre.
 
 i_acc_title: Accomodation
 i_acc_desc: Cuneo is a small city, 18 km from Dronero, which offers a big variety of hotels, b&bs and options to stay.
@@ -101,10 +103,10 @@ g_desc: If you would like to contribute to broadening our book with a new, unfor
 
 # Donation
 d_title: Donations
-d_ps: 
+d_ps:
  - Thanking you, as your presence will make our wedding day as special as it could get, we decided to return your affection with 100% solidarity wedding favors.
  - We will proceed with a donation to Associazione <span className="b">“Betania ODV”</span>  that welcomes minors and people in situations of social marginalisation.
- - More specifically, our offers will be destined for the village of Emali, in Kenya, where since 2006 the association has created a primary school, an orphanage, a clinic, and a consultation centre. 
+ - More specifically, our offers will be destined for the village of Emali, in Kenya, where since 2006 the association has created a primary school, an orphanage, a clinic, and a consultation centre.
  - 'If you would like to learn more about Associazione “Betania ODV” and its work you can do it here <a  href="https://www.associazionebetaniaonlus.org/"  target="_blank"  rel="noreferrer">  https://www.associazionebetaniaonlus.org/</a>'
 
 footer_contact: For any extra information, doubts or questions feel free to write to us here

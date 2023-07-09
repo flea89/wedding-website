@@ -2,7 +2,7 @@
 
 
 meta:
-  title: Anna e Paolo - Wedding 
+  title: Anna e Paolo - Wedding
   desc: 'Anna e Paolo wedding website with all the information you need.'
   site: 'https://annaepaolo.com'
 
@@ -34,12 +34,14 @@ s_cerimony: Cerimonia
 cerimony_location: Santuario di Ripoli
 cerimony_address: Via Montemale
 cerimony_city: Dronero CN
+cerimony_time: 15:30pm
 
 s_reception: Ricevimento
 s_reception_desc: Dopo la cerimonia i festeggiamenti continueranno presso
 reception_location: Villa Kimera
 reception_address: Via Basse di Chiusano 10
 reception_city: 12100 Cuneo
+reception_time: 18:00pm
 
 lady_heels: "Per le signore: sterrato ed erba sia al Santuario di Madonna di Ripoli che a Villa Kimera!"
 rsvp_desc:  Per far in modo di organizzare la festa ti chiediamo di confermare la presenza entro il 31 Maggio 2023
@@ -105,7 +107,7 @@ g_lista_shop: BosioCasa di Cuneo
 
 # Donation
 d_title: Donazioni
-d_ps: 
+d_ps:
  - Ringraziandovi per quanto la vostra presenza renderà speciale il nostro giorno, abbiamo deciso di ricambiare il vostro affetto con una bomboniera 100% solidale.
  - Effettueremo infatti una donazione all'Associazione <span className="b">“Betania ODV”</span> che da anni accoglie minori e persone in situazione di marginalità sociale.
  - In particolare, le nostre offerte saranno destinate al villaggio di <a href="https://goo.gl/maps/VaLo8TqSX3RQrY61A" target="_blank" rel="noreferrer" >   Emali, Kenya </a> , dove dal 2006 l'Associazione ha dato vita ad una scuola materna, un orfanotrofio, un ambulatorio ed un centro di ascolto.

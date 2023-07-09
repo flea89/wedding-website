@@ -100,7 +100,8 @@ export default function Index(context) {
               <p>
                 {context.cerimony_location} <br></br>
                 {context.cerimony_address} <br></br>
-                {context.cerimony_city}
+                {context.cerimony_city} <br></br> - <br></br>
+                {context.cerimony_time}
               </p>
               <a
                 href="https://goo.gl/maps/rgTwHdx8h6r7q6Vo9"
@@ -116,7 +117,8 @@ export default function Index(context) {
               <p>
                 {context.reception_location} <br></br>
                 {context.reception_address} <br></br>
-                {context.reception_city}
+                {context.reception_city} <br></br>-<br></br>
+                {context.reception_time}
               </p>
               <a
                 href="https://goo.gl/maps/cbqqZZt36PAM7toy9"
