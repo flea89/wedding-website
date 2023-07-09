@@ -1,7 +1,7 @@
 import { marked } from "marked";
 import React from "react";
 import { getAllRecipes, getPageCopy } from "../../utils/fsUtil";
-import RecipeLayout from "../../components/layouts/recipe-layout";
+import RecipeLayout from "../../components/layouts/recipe";
 
 export default function Recipe(props) {
   return <div dangerouslySetInnerHTML={{ __html: props.content }} />;
@@ -12,13 +12,13 @@ Recipe.getLayout = (page) => {
 };
 
 export async function getStaticProps({ locale, params }) {
-  const recipe = await getPageCopy(params.slug, { locale, isRecipe: true });
-  const content = marked(recipe.md);
+  const recepy = await getPageCopy(params.slug, { locale, isRecipe: true });
+  const content = marked(recepy.md);
 
   return {
     props: {
       locale,
-      context: { ...recipe },
+      context: { ...recepy },
       content,
     },
   };

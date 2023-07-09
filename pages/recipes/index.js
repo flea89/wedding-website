@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import RecipeLayout from "../../components/layouts/recipe";
 import { getAllRecipes, getPageCopy } from "../../utils/fsUtil";
 import { useRouter } from "next/router";
-import { marked } from "marked";
 
 export default function Index({ context, recipes }) {
   // NextJS automatic locale detection works only on index pages.
@@ -19,33 +18,13 @@ export default function Index({ context, recipes }) {
     }
   }, []);
 
-  const recipeByCategory = recipes.reduce((map, recipe) => {
-    const category = recipe.category;
-    console.assert(category);
-    if (!map[category]) {
-      map[category] = [];
-    }
-    map[category].push(recipe);
-    return map;
-  }, {});
-
   return (
     <>
       <h1>{context.title}</h1>
-      <section
-        dangerouslySetInnerHTML={{ __html: marked(context.description) }}
-      ></section>
       <ul>
-        {Object.keys(recipeByCategory).map((category) => (
-          <li key={category}>
-            {category}
-            <ul>
-              {recipeByCategory[category].map((recipe) => (
-                <li key={recipe.slug}>
-                  <Link href={`recipes/${recipe.slug}`}>{recipe.title}</Link>
-                </li>
-              ))}
-            </ul>
+        {recipes.map((recipe) => (
+          <li key={recipe.slug}>
+            <Link href={`recipes/${recipe.slug}`}>{recipe.title}</Link>
           </li>
         ))}
       </ul>
