@@ -1,10 +1,25 @@
 meta:
-  title: Anna e Paolo - Recipes
-  desc: "A collection of our recipes"
-  site: "https://annaepaolo.com/"
+  title: Anna e Paolo - Ricette
+  desc: "Our recipe book"
+  site: "https://annaepaolo.com"
 
-title: Anna & Paolo - Our favourite recipes
+title: Our recipe book
+image: /hero-recipes.jpg
+short_desc: Our curated list of recipes.
+
+
+md: |
+  Cooking has been, from the beginning of our story, a shared passion, a challenge, a ritual that brough us closer to each other, both home and while travelling.
+
+  Il tempo che nel fine settimana o per le occasioni speciali dedichiamo a ricette più impegnative ha per noi un grande valore, ne acquista ancora di più se le preparazioni vengono assaggiate anche da chi ci è più vicino. In settimana, quando il tempo scarseggia, cerchiamo il più possibile di trovare varianti e alternative a ricette rapide, in modo da poter apprezzare il cibo al meglio anche nei momenti di stanchezza.
+
+  Abbiamo deciso, come ricordo delle nostre nozze, di scrivere per voi una nostra raccolta di ricette “di fiducia”, che abbiamo ripetuto più volte insieme in cucina, nella speranza che strappino anche a voi altrettante soddisfazioni e sorrisi.
+
+  Le ricette hanno origini varie: Medio Oriente, India, Islanda, Cina, Francia, Italia e Regno Unito. Alcune sono state calibrate o inventate ex novo da noi, altre estrapolate da libri o blog a noi cari (in questo caso vi scriveremo sempre la fonte, se foste interessati a scoprire di più sul loro autore).
+
+  Buon divertimento!
+
 
 menu:
-  - text: All recipes
-    link: "/en/recipes"
+  - text: Tutte le ricette
+    link: "/it/recipes"
