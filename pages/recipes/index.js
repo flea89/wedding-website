@@ -20,16 +20,33 @@ export default function Index({ context, recipes }) {
     }
   }, []);
 
+  const recipeByCategory = recipes.reduce((map, recipe) => {
+    const category = recipe.category;
+    console.assert(category);
+    if (!map[category]) {
+      map[category] = [];
+    }
+    map[category].push(recipe);
+    return map;
+  }, {});
+
   return (
     <>
       <section
         className="no-border"
-        dangerouslySetInnerHTML={{ __html: marked(context.description || "") }}
+        dangerouslySetInnerHTML={{ __html: marked(context.md || "") }}
       ></section>
       <ul>
-        {recipes.map((recipe) => (
-          <li key={recipe.slug}>
-            <Link href={`recipes/${recipe.slug}`}>{recipe.title}</Link>
+        {Object.keys(recipeByCategory).map((category) => (
+          <li key={category}>
+            {category}
+            <ul>
+              {recipeByCategory[category].map((recipe) => (
+                <li key={recipe.slug}>
+                  <Link href={`recipes/${recipe.slug}`}>{recipe.title}</Link>
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
