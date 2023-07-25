@@ -1,7 +1,14 @@
-@import "sass-rem";
+@use "sass-rem" as to with (
+  $baseline: 18px
+);
+
 @import './variables';
 @import './mixins';
 
+
+html {
+  @include to.baseline;
+}
 
 html,
 body {
@@ -10,7 +17,6 @@ body {
   margin: 0;
   color: $font-color;
   font-family: 'Cormorant Garamond', serif;
-  font-size: rem($font-size);
   line-height: 1.35;
   scroll-behavior: smooth;
 }
@@ -25,32 +31,32 @@ a {
 
 
 h1, .h1 {
-  font-size: rem(50px);
+  font-size: to.rem(50px);
 
   @include ns {
-    font-size: rem(70px);
+    font-size: to.rem(70px);
   }
 
 }
 h2, .h2 {
-  font-size: rem(48px);
-  margin-bottom: rem(20px);
+  font-size: to.rem(48px);
+  margin-bottom: to.rem(20px);
 }
 h3, .h3 {
-  font-size: rem(28px);
-  margin-bottom: rem(20px);
+  font-size: to.rem(28px);
+  margin-bottom: to.rem(20px);
 }
 h4, .h4 {
-  font-size: rem($font-size);
-  margin-bottom: rem(12px);
+  font-size: to.rem($font-size);
+  margin-bottom: to.rem(12px);
 }
 h5, .h5 {
-  font-size: rem($font-size);
-  margin-bottom: rem(12px);
+  font-size: to.rem($font-size);
+  margin-bottom: to.rem(12px);
 }
 h6, .h6 {
-  font-size: rem($font-size);
-  margin-bottom: rem(12px);
+  font-size: to.rem($font-size);
+  margin-bottom: to.rem(12px);
 }
 
 
@@ -64,11 +70,11 @@ h6, .h6 {
 }
 
 .body-size {
-  font-size: rem($font-size);
+  font-size: to.rem($font-size);
 }
 
 .small {
-  font-size: rem(14px);
+  font-size: to.rem(14px);
 }
 
 
@@ -100,7 +106,7 @@ section {
 }
 
 p {
-  margin: 0 0 rem(12px);
+  margin: 0 0 to.rem(12px);
 }
 
 

@@ -418,7 +418,7 @@ export default function Index(context) {
               >
                 ‟
               </span>
-              <span className="i dib f3">{context.g_quote}</span>
+              <span className="i dib f4">{context.g_quote}</span>
               <span
                 style={{
                   paddingLeft: "1rem",
@@ -477,7 +477,6 @@ export default function Index(context) {
 }
 
 export async function getStaticProps({ locale }) {
-  console.log(locale);
   return {
     props: {
       locale,
