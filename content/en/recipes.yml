@@ -21,8 +21,8 @@ md: |
 
 
 menu:
-  - text: Tutte le ricette
-    link: "/it/recipes"
+  - text: All recipes
+    link: "/en/recipes"
 
 categories:
   - Brunch
