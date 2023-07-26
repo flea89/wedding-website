@@ -9,6 +9,7 @@ export default function RecipeLayout({ children, context }) {
       ...context.meta,
       title: `${context.meta.title} - ${context.title}`,
       desc: `${context.short_desc}`,
+      img: context.image,
     },
   };
 
