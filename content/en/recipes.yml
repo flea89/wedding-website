@@ -5,21 +5,28 @@ meta:
 
 title: Our recipe book
 image: /hero-recipes.jpg
-short_desc: Our curated list of recipes.
+short_desc: Our curated list of recipes we love and we want to share with you.
 
 
 md: |
   Cooking has been, from the beginning of our story, a shared passion, a challenge, a ritual that brough us closer to each other, both home and while travelling.
 
-  Il tempo che nel fine settimana o per le occasioni speciali dedichiamo a ricette più impegnative ha per noi un grande valore, ne acquista ancora di più se le preparazioni vengono assaggiate anche da chi ci è più vicino. In settimana, quando il tempo scarseggia, cerchiamo il più possibile di trovare varianti e alternative a ricette rapide, in modo da poter apprezzare il cibo al meglio anche nei momenti di stanchezza.
+  The time that we dedicate to more demanding recipes over the weekend or for special occasions has great value for us. And it acquires even more if the preparations are also tasted by those closest to us. During the week, when time is scarce, we try as much as possible to find variations and alternatives to quick recipes, so that we can better appreciate the food even in moments of tiredness.
 
-  Abbiamo deciso, come ricordo delle nostre nozze, di scrivere per voi una nostra raccolta di ricette “di fiducia”, che abbiamo ripetuto più volte insieme in cucina, nella speranza che strappino anche a voi altrettante soddisfazioni e sorrisi.
+  As a momory of our wedding, we have decided to write for you our collection of "trusted" recipes, which we have repeated several times together in the kitchen, in the hope that they will bring just as much satisfaction and smiles from you too.
 
-  Le ricette hanno origini varie: Medio Oriente, India, Islanda, Cina, Francia, Italia e Regno Unito. Alcune sono state calibrate o inventate ex novo da noi, altre estrapolate da libri o blog a noi cari (in questo caso vi scriveremo sempre la fonte, se foste interessati a scoprire di più sul loro autore).
+  The recipes have various origins: the Middle East, India, Iceland, China, France, Italy and the United Kingdom. Some have been calibrated or invented from scratch by us, others extrapolated from books or blogs dear to us (in this case we will always write you the source, if you are interested in finding out more about their author).
 
-  Buon divertimento!
+  Have fun!
 
 
 menu:
   - text: Tutte le ricette
     link: "/it/recipes"
+
+categories:
+  - Brunch
+  - Street Food
+  - Mains
+  - Vegetarian Mains
+  - Deserts

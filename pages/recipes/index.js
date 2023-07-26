@@ -36,10 +36,10 @@ export default function Index({ context, recipes }) {
         className="no-border"
         dangerouslySetInnerHTML={{ __html: marked(context.md || "") }}
       ></section>
-      <ul>
-        {Object.keys(recipeByCategory).map((category) => (
-          <li key={category}>
-            {category}
+      <ul className="list pl0 pv4 flex flex-wrap">
+        {context.categories.map((category) => (
+          <li className="pb3 pb4-ns w-100 w-50-ns pr2-ns" key={category}>
+            <h3 className="mb1">{category}</h3>
             <ul>
               {recipeByCategory[category].map((recipe) => (
                 <li key={recipe.slug}>
