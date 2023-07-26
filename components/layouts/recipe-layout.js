@@ -33,6 +33,7 @@ export default function RecipeLayout({ children, context }) {
             }}
           >
             <h1 className="mw6 mb2 pt5">{context.title}</h1>
+            {context.original ? <p className="h3">({context.original})</p> : ""}
             <p className="mw6 ph4 pb6 center tc">{context.short_desc}</p>
           </div>
           <section className="justify-center ph4 mw7 center">
