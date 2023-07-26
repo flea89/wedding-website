@@ -24,7 +24,7 @@ export default function RecipeLayout({ children, context }) {
           </Link>
         ))}
       </header>
-      <main className="flex flex-column center">
+      <main className="flex flex-column center pb4">
         <article>
           <div
             className="hero flex flex-column items-center justify-center tc"
@@ -41,6 +41,22 @@ export default function RecipeLayout({ children, context }) {
           </section>
         </article>
       </main>
+      <footer className="recipe-footer flex flex-column flex-row-ns justify-between-ns ph4 pv3 w-100">
+        <ul className="list mt0 mb3 mb0-ns">
+          {context.menu.map((i, index) => (
+            <Link className="mr3 ttc" key={index} href={i.link}>
+              {i.text}
+            </Link>
+          ))}
+        </ul>
+
+        {/* <ul className="list mv0">
+          <li>
+            <Link href="/it/recipes/"> Italiano </Link> -
+            <Link href="/en/recipes/"> English</Link>
+          </li>
+        </ul> */}
+      </footer>
     </>
   );
 }
