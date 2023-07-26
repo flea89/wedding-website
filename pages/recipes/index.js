@@ -42,7 +42,7 @@ export default function Index({ context, recipes }) {
             <h3 className="mb1">{category}</h3>
             <ul>
               {recipeByCategory[category].map((recipe) => (
-                <li key={recipe.slug}>
+                <li className="pv1" key={recipe.slug}>
                   <Link href={`recipes/${recipe.slug}`}>{recipe.title}</Link>
                 </li>
               ))}
