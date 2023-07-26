@@ -93,7 +93,7 @@ section {
       background-repeat: space;
 
       @include ns() {
-        margin: rem(45px) auto;
+        margin: to.rem(45px) auto;
       }
     }
   }
@@ -190,7 +190,7 @@ p {
 
 
 .hero {
-  min-height: rem(400px);
+  min-height: to.rem(400px);
   position: relative;
   background-size: cover;
   background-position: 50% 50%;
@@ -200,7 +200,7 @@ p {
 
 
   @include ns {
-    min-height: rem(600px);
+    min-height: to.rem(600px);
   }
 
 
